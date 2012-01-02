@@ -148,3 +148,6 @@ LOGGING = {
         },
     }
 }
+
+UPLOAD_BASE_PATH = os.path.join(ROOT, 'uploads')
+
