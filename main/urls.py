@@ -4,10 +4,12 @@ from django.conf.urls.defaults import patterns, include, url
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns('upload.main.views',
     # Examples:
-    # url(r'^$', 'upload.views.home', name='home'),
-    url(r'^', include('upload.main.urls')),
+    url(r'^$', 'index', name='index'),
+    url(r'^new', 'new'),
+    url(r'^del/(?P<id>[0-9]+)', 'del'),
+    url(r'^download/(?P<id>[0-9]+)', 'download')
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

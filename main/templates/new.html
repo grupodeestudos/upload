@@ -1,0 +1,19 @@
+
+
+<html>
+<title> Novo Arquivo </title>
+
+
+
+<form action="/new" method="post" enctype="multipart/form-data">
+
+  Titulo: <input type="text" name="title"><br/>
+  Arquivo: <input type="file" name="file">
+
+  {% csrf_token %}
+  <input type="submit" name="Salvar">
+</form>
+
+
+</html>
+

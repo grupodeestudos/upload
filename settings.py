@@ -11,7 +11,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-ROOT = os.path.dirname()s.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.abspath(__file__))
 
 DATABASES = {
     'default': {
@@ -120,6 +120,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'main',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

@@ -1,0 +1,37 @@
+
+<html>
+  <title>All Files</title>
+
+  <style>
+    td {
+      padding: 5px 0px 5px 0px;
+      margin: 3px 0px 3px 0px;
+      border-bottom: 1px solid black;
+    }
+
+  </style>
+
+  <a href="/new"> Novo Arquivo </a>
+
+  <table>
+    <tr>
+      <td>Titulo</td>
+      <td>Arquivo</td>
+      <td>Tamanho (bytes)</td>
+      <td></td>
+    </tr>
+    {% for f in files %}
+    <tr>
+      <td>{{f.title}}</td>
+      <td>{{f.name}}</td>
+      <td>{{f.content.size}}</td>
+      <td><a href="/download/{{f.id}}">Download</a></td>
+    </tr>
+
+    {%endfor%}
+
+
+  </table>
+
+</html>
+
