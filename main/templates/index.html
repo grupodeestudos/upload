@@ -25,7 +25,7 @@
       <td>{{f.title}}</td>
       <td>{{f.name}}</td>
       <td>{{f.content.size}}</td>
-      <td><a href="{% url upload-download %}/{{f.id}}">Download</a></td>
+      <td><a href="{% url upload-download f.id %}">Download</a></td>
     </tr>
 
     {%endfor%}

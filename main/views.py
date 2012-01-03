@@ -5,7 +5,7 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.servers.basehttp import FileWrapper
 from django.template import RequestContext
-
+from django.core.urlresolvers import reverse
 
 from main.models import File
 
@@ -21,7 +21,7 @@ def new(r):
         novo.title = r.POST['title']
         novo.save()
 
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect(reverse('upload-index'))
     else:
         return render_to_response('main/templates/new.html', context_instance = RequestContext(r))
 
