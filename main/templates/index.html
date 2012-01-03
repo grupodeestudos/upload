@@ -11,7 +11,7 @@
 
   </style>
 
-  <a href="/new"> Novo Arquivo </a>
+  <a href="{% url upload-new %}"> Novo Arquivo </a>
 
   <table>
     <tr>
@@ -25,7 +25,7 @@
       <td>{{f.title}}</td>
       <td>{{f.name}}</td>
       <td>{{f.content.size}}</td>
-      <td><a href="/download/{{f.id}}">Download</a></td>
+      <td><a href="{% url upload-download %}/{{f.id}}">Download</a></td>
     </tr>
 
     {%endfor%}

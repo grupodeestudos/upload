@@ -6,10 +6,10 @@ from django.conf.urls.defaults import patterns, include, url
 
 urlpatterns = patterns('upload.main.views',
     # Examples:
-    url(r'^$', 'index', name='index'),
-    url(r'^new', 'new'),
-    url(r'^del/(?P<id>[0-9]+)', 'del'),
-    url(r'^download/(?P<id>[0-9]+)', 'download')
+    url(r'^$', 'index', name='upload-index'),
+    url(r'^new', 'new', name='upload-new'),
+    #url(r'^del/(?P<id>[0-9]+)', 'del', name='upload-del'),
+    url(r'^download/(?P<id>[0-9]+)', 'download', name='upload-download')
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
