@@ -1,37 +1,32 @@
+{%extends "main/templates/base.html" %}
 
-<html>
-  <title>All Files</title>
-
-  <style>
-    td {
-      padding: 5px 0px 5px 0px;
-      margin: 3px 0px 3px 0px;
-      border-bottom: 1px solid black;
-    }
-
-  </style>
-
-  <a href="{% url upload-new %}"> Novo Arquivo </a>
-
-  <table>
-    <tr>
-      <td>Titulo</td>
-      <td>Arquivo</td>
-      <td>Tamanho (bytes)</td>
-      <td></td>
-    </tr>
-    {% for f in files %}
-    <tr>
-      <td>{{f.title}}</td>
-      <td>{{f.name}}</td>
-      <td>{{f.content.size}}</td>
-      <td><a href="{% url upload-download f.id %}">Download</a></td>
-    </tr>
-
-    {%endfor%}
+  {% block title %} All Files {% endblock %}
 
 
-  </table>
+  {% block content %} 
 
-</html>
+  {%if files %}
+    <table class="table table-stripped table-bordered">
+      <head>
+        <tr>
+          <th>Titulo</th>
+          <th>Arquivo</th>
+          <th>Tamanho (bytes)</th>
+          <th></th>
+        </tr>
+      </head>
+      <tbody> 
+        {% for f in files %}
+          <tr>
+            <td>{{f.title}}</td>
+            <td>{{f.name}}</td>
+            <td>{{f.content.size}}</td>
+            <td><a class="btn btn-primary" href="{% url upload-download f.id %}">Download</a></td>
+          </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+  {% endif %}
+  <a class="btn btn-inverse pull-right" href="{% url upload-new %}"> Novo Arquivo </a>
+  {% endblock %}
 
