@@ -18,7 +18,7 @@ def new(r):
         file = r.FILES['file']
         novo.content = file
         novo.name = file.name
-        novo.title = r.POST['title']
+        novo.title = r.POST['title'] or file.name
         novo.save()
 
         return HttpResponseRedirect(reverse('upload-index'))
