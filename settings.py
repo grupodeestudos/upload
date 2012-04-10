@@ -1,5 +1,3 @@
-# Django settings for upload project.
-
 import os
 
 DEBUG = os.getenv('DJANGO_DEBUG', False)
