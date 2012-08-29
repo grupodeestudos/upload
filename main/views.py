@@ -1,5 +1,5 @@
 # Create your views here.
-
+from django.core.files.storage import Storage, FileSystemStorage
 
 from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse
@@ -33,3 +33,11 @@ def download(r, id):
     resp = HttpResponse(FileWrapper(f.content), content_type='application/octet-stream')
     resp['Content-Disposition'] = 'attachment; filename={0}'.format(f.name)
     return resp
+
+def remove(r, id):
+    f = File.objects.get(id=id)
+    s = FileSystemStorage()
+    s.delete(f.content)
+    print s.path(f.content)
+    print f.name
+    return render_to_response('main/templates/index.html', {'files': File.objects.all()})

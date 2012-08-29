@@ -21,7 +21,7 @@
             <td>{{f.title}}</td>
             <td>{{f.name}}</td>
             <td>{{f.content.size}}</td>
-            <td><a class="btn btn-primary" href="{% url upload-download f.id %}">Download</a></td>
+            <td><a class="btn btn-primary" href="{% url upload-download f.id %}">Download</a> <a class="btn btn-danger" href="{% url remove-file f.id %}">Remover</a> </td>
           </tr>
         {%endfor%}
       </tbody>

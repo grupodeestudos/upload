@@ -2,7 +2,7 @@
 
 import os
 
-DEBUG = os.getenv('DJANGO_DEBUG', False)
+DEBUG = os.getenv('DJANGO_DEBUG', True)
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
