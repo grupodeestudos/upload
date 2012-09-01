@@ -1,4 +1,5 @@
 # Create your views here.
+import os
 from django.core.files.storage import Storage, FileSystemStorage
 
 from django.shortcuts import render_to_response, get_object_or_404
@@ -36,8 +37,7 @@ def download(r, id):
 
 def remove(r, id):
     f = File.objects.get(id=id)
-    s = FileSystemStorage()
-    s.delete(f.content)
-    print s.path(f.content)
-    print f.name
+    f.delete()
+    #s = FileSystemStorage()
+    os.remove(unicode(f.content.path))
     return render_to_response('main/templates/index.html', {'files': File.objects.all()})
