@@ -9,7 +9,8 @@ urlpatterns = patterns('upload.main.views',
     url(r'^$', 'index', name='upload-index'),
     url(r'^new', 'new', name='upload-new'),
     #url(r'^del/(?P<id>[0-9]+)', 'del', name='upload-del'),
-    url(r'^download/(?P<id>[0-9]+)', 'download', name='upload-download')
+    url(r'^download/(?P<id>[0-9]+)', 'download', name='upload-download'),
+    url(r'^remove/(?P<id>[0-9]+)', 'remove', name='remove-file'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

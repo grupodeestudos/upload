@@ -15,5 +15,5 @@ def _upload_path(instance, filename):
 class File(models.Model):
     name = models.CharField(max_length=256)
     title = models.TextField()
-    content = models.FileField(upload_to = _upload_path, \
+    content = models.FileField(upload_to = _upload_path,
             storage = FileSystemStorage(location = settings.UPLOAD_BASE_PATH))
